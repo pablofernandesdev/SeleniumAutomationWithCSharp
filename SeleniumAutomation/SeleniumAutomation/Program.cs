@@ -23,6 +23,7 @@ namespace SeleniumAutomation
         {
             
             driver.Navigate().GoToUrl("http:\\www.google.com");
+            Console.WriteLine("Acessando o site");
         }
 
         [Test]
@@ -31,12 +32,14 @@ namespace SeleniumAutomation
             
             IWebElement element = driver.FindElement(By.Name("q"));
             element.SendKeys("executeautomation");
+            Console.WriteLine("Realizando a pesquisa");
         }
 
         [TearDown]
         public void CleanUp()
         {
             driver.Quit();
+            Console.WriteLine("Fechando o browser");
         }
 
     }
