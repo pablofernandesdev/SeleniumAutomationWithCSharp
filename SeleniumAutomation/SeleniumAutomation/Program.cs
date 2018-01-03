@@ -13,7 +13,7 @@ namespace SeleniumAutomation
     class Program
     {
         
-        IWebDriver driver = new ChromeDriver();
+      
         static void Main(string[] args)
         {
 
@@ -22,22 +22,23 @@ namespace SeleniumAutomation
         [SetUp]
         public void Initialize()
         {
-            
-            driver.Navigate().GoToUrl("http://www.executeautomation.com/demosite/index.html");
+            PropertiesCollection.driver = new ChromeDriver();
+
+            PropertiesCollection.driver.Navigate().GoToUrl("http://www.executeautomation.com/demosite/index.html");
             Console.WriteLine("Acessando o site");
         }
 
         [Test]
         public void ExecuteTest()
         {
-            SeleniumSetMethods.EnterText(driver, "Initial", "pablo", "Name");
-            SeleniumSetMethods.SelectDropDown(driver, "TitleId", "Mr.", "Id");
-            SeleniumSetMethods.Click(driver, "Save", "Name");
+            SeleniumSetMethods.EnterText("Initial", "pablo", PropertyType.Name);
+            SeleniumSetMethods.SelectDropDown("TitleId", "Mr.", PropertyType.Id);
+            SeleniumSetMethods.Click("Save", PropertyType.Name);
 
             Thread.Sleep(10000);
 
-            Console.WriteLine("Valor do campo Initial" + SeleniumGetMethods.GetText(driver, "Initial", "Name"));
-            Console.WriteLine("Valor do campo TitleID" + SeleniumGetMethods.GetText(driver, "TitleId", "Id"));
+            Console.WriteLine("Valor do campo Initial" + SeleniumGetMethods.GetText("Initial", PropertyType.Name));
+            Console.WriteLine("Valor do campo TitleID" + SeleniumGetMethods.GetText("TitleId", PropertyType.Id));
 
 
         }
@@ -45,7 +46,7 @@ namespace SeleniumAutomation
         [TearDown]
         public void CleanUp()
         {
-            driver.Quit();
+            PropertiesCollection.driver.Quit();
             Console.WriteLine("Fechando o browser");
         }
 
