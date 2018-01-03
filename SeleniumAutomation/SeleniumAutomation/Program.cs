@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SeleniumAutomation
@@ -22,18 +23,20 @@ namespace SeleniumAutomation
         public void Initialize()
         {
             
-            driver.Navigate().GoToUrl("http:\\www.google.com");
+            driver.Navigate().GoToUrl("http://www.executeautomation.com/demosite/index.html");
             Console.WriteLine("Acessando o site");
         }
 
         [Test]
         public void ExecuteTest()
         {
-            
-            IWebElement element = driver.FindElement(By.Name("q"));
-            element.SendKeys("executeautomation");
-            Console.WriteLine("Realizando a pesquisa");
-            //teste pra saber o que vai dar
+            SeleniumSetMethods.EnterText(driver, "Initial", "pablo", "Name");
+            SeleniumSetMethods.SelectDropDown(driver, "TitleId", "Mr.", "Id");
+            SeleniumSetMethods.Click(driver, "Save", "Name");
+
+            //Thread.Sleep(10000);
+
+            Console.WriteLine("Preenchendo informações");
         }
 
         [TearDown]
