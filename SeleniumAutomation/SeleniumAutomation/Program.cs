@@ -33,6 +33,7 @@ namespace SeleniumAutomation
             IWebElement element = driver.FindElement(By.Name("q"));
             element.SendKeys("executeautomation");
             Console.WriteLine("Realizando a pesquisa");
+            //teste pra saber o que vai dar
         }
 
         [TearDown]
