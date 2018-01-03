@@ -34,9 +34,12 @@ namespace SeleniumAutomation
             SeleniumSetMethods.SelectDropDown(driver, "TitleId", "Mr.", "Id");
             SeleniumSetMethods.Click(driver, "Save", "Name");
 
-            //Thread.Sleep(10000);
+            Thread.Sleep(10000);
 
-            Console.WriteLine("Preenchendo informações");
+            Console.WriteLine("Valor do campo Initial" + SeleniumGetMethods.GetText(driver, "Initial", "Name"));
+            Console.WriteLine("Valor do campo TitleID" + SeleniumGetMethods.GetText(driver, "TitleId", "Id"));
+
+
         }
 
         [TearDown]
