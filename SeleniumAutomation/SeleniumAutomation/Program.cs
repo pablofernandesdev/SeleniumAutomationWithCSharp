@@ -13,17 +13,18 @@ namespace SeleniumAutomation
     class Program
     {
         
-      
         static void Main(string[] args)
         {
 
         }
+
 
         [SetUp]
         public void Initialize()
         {
             PropertiesCollection.driver = new ChromeDriver();
 
+            //Navigate to page
             PropertiesCollection.driver.Navigate().GoToUrl("http://www.executeautomation.com/demosite/index.html");
             Console.WriteLine("Acessando o site");
         }
@@ -31,8 +32,10 @@ namespace SeleniumAutomation
         [Test]
         public void ExecuteTest()
         {
+            //Initialize the page by calling its reference
             EAPageObject page = new EAPageObject();
 
+            //Perform Ops
             page.ddlTitle.SendKeys("Mr.");
             page.txtInitial.SendKeys("Pablo");
             page.btnSave.Click();

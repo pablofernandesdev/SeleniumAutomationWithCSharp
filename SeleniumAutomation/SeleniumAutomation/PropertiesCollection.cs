@@ -19,6 +19,7 @@ namespace SeleniumAutomation
 
     class PropertiesCollection
     {
+        //Create the reference for our browser
         public static IWebDriver driver = new ChromeDriver();
     }
 }

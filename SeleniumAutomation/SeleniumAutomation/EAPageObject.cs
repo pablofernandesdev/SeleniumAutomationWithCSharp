@@ -15,6 +15,7 @@ namespace SeleniumAutomation
             PageFactory.InitElements(PropertiesCollection.driver, this);
         }
 
+        //Find the element
         [FindsBy(How = How.Name, Using = "Initial")]
         public IWebElement txtInitial { get; set; }
 
