@@ -31,6 +31,18 @@ namespace SeleniumAutomation
         [Test]
         public void ExecuteTest()
         {
+            EAPageObject page = new EAPageObject();
+
+            page.ddlTitle.SendKeys("Mr.");
+            page.txtInitial.SendKeys("Pablo");
+            page.btnSave.Click();
+
+            Console.WriteLine("Valor do Title: " + page.ddlTitle.GetAttribute("value"));
+            Console.WriteLine("Valor do campo Initial: " + page.txtInitial.GetAttribute("value"));
+
+            Thread.Sleep(5000);
+
+            /*
             SeleniumSetMethods.EnterText("Initial", "pablo", PropertyType.Name);
             SeleniumSetMethods.SelectDropDown("TitleId", "Mr.", PropertyType.Id);
             SeleniumSetMethods.Click("Save", PropertyType.Name);
@@ -39,7 +51,7 @@ namespace SeleniumAutomation
 
             Console.WriteLine("Valor do campo Initial" + SeleniumGetMethods.GetText("Initial", PropertyType.Name));
             Console.WriteLine("Valor do campo TitleID" + SeleniumGetMethods.GetText("TitleId", PropertyType.Id));
-
+            */
 
         }
 
