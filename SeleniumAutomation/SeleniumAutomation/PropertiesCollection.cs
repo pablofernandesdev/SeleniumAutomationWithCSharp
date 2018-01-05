@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace SeleniumAutomation
 {
+    //Elements
     enum PropertyType
     {
         Id,

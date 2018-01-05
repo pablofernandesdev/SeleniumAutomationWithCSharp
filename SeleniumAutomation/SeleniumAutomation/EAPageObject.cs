@@ -15,12 +15,18 @@ namespace SeleniumAutomation
             PageFactory.InitElements(PropertiesCollection.driver, this);
         }
 
-        //Find the element
+        //Form 
         [FindsBy(How = How.Name, Using = "Initial")]
         public IWebElement txtInitial { get; set; }
 
         [FindsBy(How = How.Id, Using = "TitleId")]
         public IWebElement ddlTitle { get; set; }
+
+        [FindsBy(How = How.Name, Using = "FirstName")]
+        public IWebElement txtFirstName { get; set; }
+
+        [FindsBy(How = How.Name, Using = "MiddleName")]
+        public IWebElement txtMiddleName { get; set; }
 
         [FindsBy(How = How.Name, Using = "Save")]
         public IWebElement btnSave { get; set; }

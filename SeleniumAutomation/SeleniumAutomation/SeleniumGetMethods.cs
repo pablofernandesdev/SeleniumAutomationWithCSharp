@@ -9,6 +9,7 @@ namespace SeleniumAutomation
 {
     class SeleniumGetMethods
     {
+        //Return values of elements
         public static string GetText(string element, PropertyType elementtype)
         {
             if (elementtype == PropertyType.Id)
